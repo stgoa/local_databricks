@@ -13,6 +13,8 @@ from dotenv import load_dotenv
 from pydantic import BaseSettings
 
 
+__app_name__ = "local_databricks"
+
 def init_dotenv():
     """Loc n' load dotenv file.
 
@@ -91,6 +93,9 @@ class Settings(BaseSettings):
     
     LOG_DESTINATION: LogDest = LogDest.CONSOLE.value
     """Destination for logs."""
+
+    DATABRICKS: bool = False
+    """Is this running on databricks?"""
 
     class Config:
         """Inner configuration."""

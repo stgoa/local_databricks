@@ -2,4 +2,4 @@
 """Imports unit test."""
 
 def test_import():
-    import local_databricks
+    import glocal_databricks
