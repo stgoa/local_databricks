@@ -94,7 +94,7 @@ class Settings(BaseSettings):
     LOG_DESTINATION: LogDest = LogDest.CONSOLE.value
     """Destination for logs."""
 
-    DATABRICKS: bool = False
+    DATABRICKS: bool = ('dbutils' in globals()) and ('display' in globals()) and ('spark' in globals())
     """Is this running on databricks?"""
 
     class Config:
