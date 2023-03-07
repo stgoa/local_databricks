@@ -41,14 +41,28 @@ You can then import the local_databricks module and use its functions to interac
 
 
 ```
-# TODO
-import local_databricks
+# refactor your databricks notebooks with the following:
 
-# Run a notebook locally
-local_databricks.run_notebook_locally('/path/to/notebook.ipynb')
+# import the library
+from local_databricks.ldbutils import notebook
 
-# Run a notebook on Databricks
-local_databricks.run_notebook_on_databricks('/path/to/notebook.ipynb')
+# to run a notebook
+# instead of dbutils.notebook.run(path, timeout_seconds, arguments=arguments)
+# replace with 
+notebook.run_notebook(path = path, timeout_seconds = timeout_seconds, arguments = arguments)
+
+# to access to secrets
+# instead of dbutils.secrets.get(scope=scope, key=key)
+# replace with
+notebook.get_secret(scope = scope, key = key)
+
+# to access to enviroment variables
+# instead of dbutils.secrets.get(scope=scope, key=key)
+# replace with
+notebook.get_secret(scope = scope, key = key)
+
+# to set enviroment variables
+
 ```
 
 ## Features
