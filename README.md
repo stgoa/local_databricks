@@ -72,6 +72,29 @@ notebook.set_enviroment(key = key, value=value)
 notebook.display(obj)
 
 ```
+## Jupyter notebook
+
+To build the [image compatible with Spark & Jupyter](https://hub.docker.com/layers/jupyter/pyspark-notebook/latest/images/sha256-bebb63d6df76594a6ede790e8fccd413b32f13eec97f244240315f0e105ff143?context=explore) (this will simulate the local databricks enviroment)
+```
+docker build -t local_test --target base .
+docker run -it -p 8888:8888 --rm local_test:latest bash
+```
+
+To copy your local files into the container (for instance your pipeline (.py)):
+```
+docker cp /path/to/your/pipeline.py <running-containter-name>:/local_databricks/ 
+```
+
+Run [jupyter in the container](https://stackoverflow.com/questions/50919752/cant-open-jupyter-notebook-in-docker)
+
+```
+jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root
+```
+
+In your browser open the link ```http://localhost:8888/?token=<your-token-printed-in-the-containers-terminal>```
+
+(if it fails to load, try other port number other than 8888)
+
 
 ## Features
 
