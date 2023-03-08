@@ -57,11 +57,19 @@ notebook.run_notebook(path = path, timeout_seconds = timeout_seconds, arguments 
 notebook.get_secret(scope = scope, key = key)
 
 # to access to enviroment variables
-# instead of dbutils.secrets.get(scope=scope, key=key)
+# instead of spark.conf.get(key=key)
 # replace with
-notebook.get_secret(scope = scope, key = key)
+notebook.read_enviroment(key = key)
 
 # to set enviroment variables
+# instead of spark.conf.set(key, value)
+# replace with
+notebook.set_enviroment(key = key, value=value)
+
+# to display objects
+# instead of display(obj)
+# replace with
+notebook.display(obj)
 
 ```
 
