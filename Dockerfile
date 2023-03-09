@@ -1,8 +1,7 @@
 FROM jupyter/pyspark-notebook as base
 WORKDIR /local_databricks
 COPY pyproject.toml ./
-ADD /pipeline ./pipeline
-ADD /local ./local
+ADD /tests ./tests
 ENV PYTHONPATH "${PYTHONPATH}:./"
 RUN python -m pip install --upgrade pip 
 RUN pip install poetry 
