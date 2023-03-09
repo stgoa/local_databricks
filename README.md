@@ -4,32 +4,9 @@
 This can be used to test Databricks pipelines locally.
 
 ## Instalation
-To install local_databricks, there are two options:
+To install local_databrick:
 
-**Cloning from repository**
-
-The package can be installed using poetry
-
-```
-    $ git clone link-to-repository
-    $ cd local_databricks
-    $ python -m venv .venv
-    $ poetry install
-```
-
-or using ``setup.py`` file
-
-```
-
-    $ git clone link-to-repository
-    $ cd local_databricks
-    $ python -m venv .venv
-    $ python setup.py install
-```
-
-**PIP**
-
-```TODO```
+```pip install local-databricks```
 
 
 ## Usage
